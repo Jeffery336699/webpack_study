@@ -1,11 +1,11 @@
 const path = require('path')
-const webpack=require('webpack')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: "dist/"
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -30,7 +30,7 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 33000,
-                            name:'img/[name].[hash:8].[ext]'
+                            name: 'img/[name].[hash:8].[ext]'
                         },
                     },
                 ],
@@ -53,12 +53,15 @@ module.exports = {
     },
     resolve: {
         // alias:别名
-        extensions: ['.js','.css','.vue'],
+        extensions: ['.js', '.css', '.vue'],
         alias: {
-            'vue$':'vue/dist/vue.esm.js'
+            'vue$': 'vue/dist/vue.esm.js'
         }
     },
     plugins: [
-        new webpack.BannerPlugin('最终版权归Jeffery所有')
+        new webpack.BannerPlugin('最终版权归Jeffery所有'),
+        new HtmlWebpackPlugin({
+            template: 'index.html'
+        })
     ]
 }

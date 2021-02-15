@@ -441,7 +441,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(13);
+var	fixUrls = __webpack_require__(14);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -790,6 +790,10 @@ var _vue = __webpack_require__(6);
 
 var _vue2 = _interopRequireDefault(_vue);
 
+var _app = __webpack_require__(9);
+
+var _app2 = _interopRequireDefault(_app);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log("我来了");
@@ -799,34 +803,19 @@ console.log((0, _mathUtls.mul)(20, 20));
 
 //依赖css样式
 // import("./css/normal.css")
-var normal = __webpack_require__(9);
+var normal = __webpack_require__(10);
 //依赖less文件
-__webpack_require__(14);
+__webpack_require__(15);
 document.writeln('<h2>every body</h2>');
 
 //使用vue开发
 
 
-var App = {
-    template: "\n      <dev>\n      <h2>{{ message }}</h2>\n      <button @click=\"clickTest\">\u70B9\u51FB</button>\n      </dev>\n    ",
-    data: function data() {
-        return {
-            message: 'hello webpack-1'
-        };
-    },
-
-    methods: {
-        clickTest: function clickTest() {
-            console.log('你好呀');
-        }
-    }
-};
-
 var app = new _vue2.default({
     el: '#app',
     template: '<App/>',
     components: {
-        App: App
+        App: _app2.default
     }
 });
 
@@ -13120,8 +13109,33 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
 
-var content = __webpack_require__(10);
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    template: '\n      <dev>\n      <h2>{{ message }}</h2>\n      <button @click="clickTest">\u70B9\u51FB</button>\n      </dev>\n    ',
+    data: function data() {
+        return {
+            message: 'hello webpack-2'
+        };
+    },
+
+    methods: {
+        clickTest: function clickTest() {
+            console.log('你好呀');
+        }
+    }
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(11);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -13167,13 +13181,13 @@ if(false) {
 }
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
 // Imports
-var urlEscape = __webpack_require__(11);
-var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(12));
+var urlEscape = __webpack_require__(12);
+var ___CSS_LOADER_URL___0___ = urlEscape(__webpack_require__(13));
 
 // Module
 exports.push([module.i, "body{\r\n    /*background-color: red;*/\r\n    background: url(" + ___CSS_LOADER_URL___0___ + ");\r\n}\r\n\r\nh1{\r\n    color: chocolate;\r\n}", ""]);
@@ -13181,7 +13195,7 @@ exports.push([module.i, "body{\r\n    /*background-color: red;*/\r\n    backgrou
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13207,13 +13221,13 @@ module.exports = function escape(url, needQuotes) {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/test1.6c766da0.jpg";
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 
@@ -13308,11 +13322,11 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(15);
+var content = __webpack_require__(16);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -13358,7 +13372,7 @@ if(false) {
 }
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);

@@ -1,3 +1,4 @@
+/*! 最终版权归Jeffery所有 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1204,6 +1205,8 @@ document.writeln('<h2>every body</h2>');
 
 
 // import App from './vue/app'
+
+//记得这里的.vue不能省略！！！
 
 
 var app = new _vue2.default({

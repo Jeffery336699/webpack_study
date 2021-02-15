@@ -15,9 +15,29 @@ document.writeln('<h2>every body</h2>')
 //使用vue开发
 import Vue from 'vue'
 
+const App = {
+    template: `
+      <dev>
+      <h2>{{ message }}</h2>
+      <button @click="clickTest">点击</button>
+      </dev>
+    `,
+    data() {
+        return {
+            message: 'hello webpack-1'
+        }
+    },
+    methods: {
+        clickTest() {
+            console.log('你好呀');
+        }
+    }
+}
+
 const app = new Vue({
     el: '#app',
-    data: {
-        message: 'hello webpack'
+    template: '<App/>',
+    components: {
+        App
     }
 })

@@ -807,10 +807,26 @@ document.writeln('<h2>every body</h2>');
 //使用vue开发
 
 
+var App = {
+    template: "\n      <dev>\n      <h2>{{ message }}</h2>\n      <button @click=\"clickTest\">\u70B9\u51FB</button>\n      </dev>\n    ",
+    data: function data() {
+        return {
+            message: 'hello webpack-1'
+        };
+    },
+
+    methods: {
+        clickTest: function clickTest() {
+            console.log('你好呀');
+        }
+    }
+};
+
 var app = new _vue2.default({
     el: '#app',
-    data: {
-        message: 'hello webpack'
+    template: '<App/>',
+    components: {
+        App: App
     }
 });
 

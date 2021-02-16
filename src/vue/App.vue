@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      message: 'hello webpack-3'
+      message: 'hello webpack-4'
     }
   },
   methods: {

@@ -9,7 +9,7 @@ export default {
   name: "Cpn",
   data() {
     return {
-      message: '我是子组件2333333'
+      message: '我是子组件2333333111'
     }
   }
 }
